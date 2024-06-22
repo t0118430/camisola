@@ -8,6 +8,7 @@ to = os.getenv('TO')
 from_ = os.getenv('FROM')
 account_sid = os.getenv('ACCOUNT_SID')
 auth_token = os.getenv('AUTH_TOKEN')
+send_notification = os.getenv('SEND_NOTIFICATION')
 class_name = 'no-stock-label'
 disable_click = 'disable-click'
 
@@ -40,10 +41,11 @@ def check_class_div_present(url, class_name, disable_click):
         print(f"An error occurred while trying to retrieve the webpage: {e}")
         return False
 
-if check_class_div_present(url, class_name, disable_click):
+if check_class_div_present(url, class_name, disable_click) and send_notification.upper() == 'S':
         client = Client(account_sid, auth_token)
         message = client.messages.create(
         to=to,
         from_=from_,
         body=f'Camisola Disponivel schnell!'
-    )
+        )
+        os.environ['SEND_NOTIFICATION'] = 'N'
