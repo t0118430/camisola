@@ -6,6 +6,7 @@ on:
 
 env:
   URL: ${{vars.URL}}
+  SEND_NOTIFICATION: ${{vars.SEND_NOTIFICATION}}
   TO: ${{secrets.TO}}
   FROM: ${{secrets.FROM}}
   ACCOUNT_SID: ${{secrets.ACCOUNT_SID}}
