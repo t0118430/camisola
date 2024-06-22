@@ -1,2 +1,2 @@
 twilio==8.10.0
-bs4==4.12.3
+beautifulsoup4==4.12.3
