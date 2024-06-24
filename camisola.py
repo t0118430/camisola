@@ -48,4 +48,3 @@ if check_class_div_present(url, class_name, disable_click) and send_notification
         from_=from_,
         body=f'Camisola Disponivel schnell!'
         )
-        os.environ['SEND_NOTIFICATION'] = 'N'
